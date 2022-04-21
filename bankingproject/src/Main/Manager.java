@@ -1,6 +1,6 @@
 package Main;
 
-public class Manager extends Employee{
+public class Manager extends Employee implements AccountActionsIMPL{
       // Inheritance 27
 	 // fields
 	private String timeCards;
@@ -17,6 +17,17 @@ public  Manager(){
 	public String toString() {
 		return "Manager [timeCards=" + timeCards + "]";
 	}
+	@Override
+	public void withdraw(float amount, float withdrawAmount) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void deposit(float amount, float depositAmount) {
+		// TODO Auto-generated method stub
+		
+	}
 	
-	
+	public void PrintThis(int...val) {
+	}
 }
