@@ -5,11 +5,13 @@ import java.util.Scanner;
 
 public class MainEntryPoint {
 	public static Scanner reader = new Scanner(System.in);
-
+	
 	public static void main(String[] args) throws IOException {
+		
+		
 		AppSystem app = new AppSystem();
 		CartSystem cart = new CartSystem();
-
+		
 		Integer choice = 0;
 		while (choice != 7) {
 			menu();
@@ -39,13 +41,13 @@ public class MainEntryPoint {
 				reader.nextLine();
 				String item_name = reader.nextLine();
 				Item item1 = app.getItemCollection().get(item_name);
-				if (app.checkAvailability(item1))
-					if (cart.add(item1)) {
-						app.reduceAvailableQuantity(item_name);
-						System.out.println("Item successfully added");
-					} else {
-						System.out.println("Invalid or Unavailable Item, Please Try Again");
-					}
+				if(app.checkAvailability(item1))
+				if (cart.add(item1)) {
+					app.reduceAvailableQuantity(item_name);
+					System.out.println("Item successfully added");
+				} else {
+					System.out.println("Invalid or Unavailable Item, Please Try Again");
+				}
 				;
 				break;
 			case 3:
